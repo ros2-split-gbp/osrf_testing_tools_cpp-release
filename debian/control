@@ -1,0 +1,12 @@
+Source: ros-crystal-osrf-testing-tools-cpp
+Section: misc
+Priority: extra
+Maintainer: William Woodall <william@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), cmake, ros-crystal-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-crystal-osrf-testing-tools-cpp
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-crystal-ros-workspace
+Description: Testing tools for C++, and is used in various OSRF projects.
