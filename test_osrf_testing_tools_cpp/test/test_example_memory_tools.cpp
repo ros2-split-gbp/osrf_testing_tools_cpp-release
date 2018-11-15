@@ -21,14 +21,9 @@
 #include "osrf_testing_tools_cpp/memory_tools/memory_tools.hpp"
 #include "osrf_testing_tools_cpp/scope_exit.hpp"
 
-void my_first_function(const std::string& str)
+void my_first_function(const std::string & str)
 {
-  void * some_memory = std::malloc(1024);
-  // We need to do something with the malloc'ed memory to make sure this
-  // function doesn't get optimized away.  memset isn't enough, so we do a
-  // memcpy from a passed in string, which is enough to keep the optimizer away.
-  memcpy(some_memory, str.c_str(), str.length());
-  std::free(some_memory);
+  osrf_testing_tools_cpp::memory_tools::guaranteed_malloc(str);
 }
 
 int my_second_function(int a, int b)
@@ -64,6 +59,7 @@ TEST(TestMemoryTools, test_example) {
   // enabling monitoring will allow checking to begin, but the default state is
   // that dynamic memory calls are expected, so again either function will pass
   osrf_testing_tools_cpp::memory_tools::enable_monitoring();
+  ASSERT_TRUE(osrf_testing_tools_cpp::memory_tools::is_working());
   my_first_function(dummy);
   EXPECT_EQ(my_second_function(1, 2), 3);
 

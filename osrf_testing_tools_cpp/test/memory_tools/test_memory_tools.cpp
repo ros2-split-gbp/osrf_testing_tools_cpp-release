@@ -151,12 +151,7 @@ TEST(TestMemoryTools, test_allocation_checking_tools) {
 
 void my_first_function(const std::string& str)
 {
-  void * some_memory = std::malloc(1024);
-  // We need to do something with the malloc'ed memory to make sure this
-  // function doesn't get optimized away.  memset isn't enough, so we do a
-  // memcpy from a passed in string, which is enough to keep the optimizer away.
-  memcpy(some_memory, str.c_str(), str.length());
-  std::free(some_memory);
+  osrf_testing_tools_cpp::memory_tools::guaranteed_malloc(str);
 }
 
 int my_second_function(int a, int b)
