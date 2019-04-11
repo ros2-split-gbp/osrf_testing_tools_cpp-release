@@ -10,14 +10,31 @@ add_library(memory_tools SHARED
   testing_helpers.cpp
   verbosity.cpp
 )
+
 target_include_directories(memory_tools
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
 )
+
+find_library(DL_LIBRARY NAMES dl)
+find_library(BFD_LIBRARY NAMES bfd)
+
+if(DL_LIBRARY AND BFD_LIBRARY)
+  message(STATUS "Found bfd: ${BFD_LIBRARY}")
+endif()
+
 if(UNIX AND NOT APPLE)
   # On Linux like systems, add dl and use the normal library and LD_PRELOAD.
-  target_link_libraries(memory_tools dl)
+
+  if(DL_LIBRARY)
+    target_link_libraries(memory_tools ${DL_LIBRARY})
+  endif()
+
+  if(BFD_LIBRARY)
+    target_link_libraries(memory_tools ${BFD_LIBRARY})
+    target_compile_definitions(memory_tools PRIVATE BACKWARD_HAS_BFD=1)
+  endif()
 endif()
 target_compile_definitions(memory_tools
   PRIVATE "OSRF_TESTING_TOOLS_CPP_MEMORY_TOOLS_BUILDING_DLL")
@@ -27,9 +44,23 @@ add_library(memory_tools_interpose SHARED
 )
 target_link_libraries(memory_tools_interpose memory_tools)
 
+if(BFD_LIBRARY)
+  target_compile_definitions(memory_tools_interpose PRIVATE BACKWARD_HAS_BFD=1)
+endif()
+
+option(OSRF_TESTING_TOOLS_CPP_DISABLE_MEMORY_TOOLS
+  "Disable environment configuration for memory tools"
+  OFF)
+
+# Memory tools doesn't work on Windows right now.
 # TODO(wjwwood): If on aarch64, so not set the preload environment variables, until fixed.
 # see: https://github.com/osrf/osrf_testing_tools_cpp/issues/3
-if(NOT CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")
+if(WIN32 OR CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")
+  set(OSRF_TESTING_TOOLS_CPP_DISABLE_MEMORY_TOOLS ON)
+endif()
+
+if (NOT OSRF_TESTING_TOOLS_CPP_DISABLE_MEMORY_TOOLS)
+  set(memory_tools_is_available TRUE)
   if(APPLE)
     list(APPEND memory_tools_extra_test_env
       DYLD_INSERT_LIBRARIES=$<TARGET_FILE:memory_tools_interpose>)
@@ -64,3 +95,4 @@ install(EXPORT memory_tools_interpose
 )
 
 set(memory_tools_extra_test_env "${memory_tools_extra_test_env}" PARENT_SCOPE)
+set(memory_tools_is_available "${memory_tools_is_available}" PARENT_SCOPE)
