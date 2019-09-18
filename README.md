@@ -1,3 +1,28 @@
+## osrf_testing_tools_cpp (eloquent) - 1.2.1-1
+
+The packages in the `osrf_testing_tools_cpp` repository were released into the `eloquent` distro by running `/usr/bin/bloom-release -n -r eloquent osrf_testing_tools_cpp --override-release-repository-push-url git@github.com:ros2-gbp/osrf_testing_tools_cpp-release` on `Wed, 18 Sep 2019 14:21:38 -0000`
+
+These packages were released:
+- `osrf_testing_tools_cpp`
+- `test_osrf_testing_tools_cpp`
+
+Version of package(s) in repository `osrf_testing_tools_cpp`:
+
+- upstream repository: https://github.com/osrf/osrf_testing_tools_cpp.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `1.2.1-1`
+
+Versions of tools used:
+
+- bloom version: `0.8.0`
+- catkin_pkg version: `0.4.13`
+- rosdep version: `0.15.2`
+- rosdistro version: `0.7.4`
+- vcstools version: `0.1.42`
+
+
 ## osrf_testing_tools_cpp (dashing) - 1.2.1-1
 
 The packages in the `osrf_testing_tools_cpp` repository were released into the `dashing` distro by running `/usr/bin/bloom-release -r dashing osrf_testing_tools_cpp --override-release-repository-push-url git@github.com:ros2-gbp/osrf_testing_tools_cpp-release` on `Mon, 20 May 2019 22:19:48 -0000`
