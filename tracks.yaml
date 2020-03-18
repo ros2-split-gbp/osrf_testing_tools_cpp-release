@@ -62,10 +62,10 @@ tracks:
     - git-bloom-generate -y rosrpm --prefix release/:{ros_distro} :{ros_distro} -i
       :{release_inc}
     devel_branch: dashing
-    last_version: 1.2.1
+    last_version: 1.2.2
     name: osrf_testing_tools_cpp
     patches: null
-    release_inc: '2'
+    release_inc: '1'
     release_repo_url: https://github.com/ros2-gbp/osrf_testings_tools_cpp-release.git
     release_tag: :{version}
     ros_distro: dashing
