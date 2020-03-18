@@ -1,0 +1,12 @@
+Source: ros-eloquent-osrf-testing-tools-cpp
+Section: misc
+Priority: optional
+Maintainer: William Woodall <william@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), cmake, ros-eloquent-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-eloquent-osrf-testing-tools-cpp
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-eloquent-ros-workspace
+Description: Testing tools for C++, and is used in various OSRF projects.
