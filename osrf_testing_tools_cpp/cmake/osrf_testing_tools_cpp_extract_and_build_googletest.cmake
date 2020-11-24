@@ -72,7 +72,9 @@ macro(osrf_testing_tools_cpp_extract_and_build_googletest
     # (see https://wiki.gentoo.org/wiki/AddressSanitizer/Problems#pthread_linking_issues
     # for some additional information).  To work around that, we unconditionally
     # add the -pthread flag for Linux machines so it will always work
-    link_libraries("-pthread")
+    execute_process(COMMAND bash "-c" "sed -i 's@\${CMAKE_THREAD_LIBS_INIT}@\${CMAKE_THREAD_LIBS_INIT} -pthread@' ${__prefix}-src/googletest/cmake/internal_utils.cmake"
+      RESULT_VARIABLE result
+      WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/${__prefix}-extracted)
   endif()
   # Add googletest directly to our build. This defines
   # the gtest and gtest_main targets.
