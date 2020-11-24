@@ -1,3 +1,28 @@
+## osrf_testing_tools_cpp (dashing) - 1.2.3-1
+
+The packages in the `osrf_testing_tools_cpp` repository were released into the `dashing` distro by running `/home/steven/.local/bin/bloom-release -r dashing osrf_testing_tools_cpp` on `Tue, 24 Nov 2020 19:44:03 -0000`
+
+These packages were released:
+- `osrf_testing_tools_cpp`
+- `test_osrf_testing_tools_cpp`
+
+Version of package(s) in repository `osrf_testing_tools_cpp`:
+
+- upstream repository: https://github.com/osrf/osrf_testing_tools_cpp.git
+- release repository: https://github.com/ros2-gbp/osrf_testings_tools_cpp-release.git
+- rosdistro version: `1.2.2-1`
+- old version: `1.2.2-1`
+- new version: `1.2.3-1`
+
+Versions of tools used:
+
+- bloom version: `0.10.0`
+- catkin_pkg version: `0.4.16`
+- rosdep version: `0.18.0`
+- rosdistro version: `0.8.0`
+- vcstools version: `0.1.42`
+
+
 ## osrf_testing_tools_cpp (foxy) - 1.3.2-1
 
 The packages in the `osrf_testing_tools_cpp` repository were released into the `foxy` distro by running `/usr/local/bin/bloom-release -r foxy -t foxy osrf_testing_tools_cpp` on `Fri, 22 May 2020 05:08:52 -0000`
