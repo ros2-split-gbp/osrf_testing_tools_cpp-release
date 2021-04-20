@@ -1,1 +1,1 @@
-{"base": "0a418d6", "parent": "debian/rolling/test_osrf_testing_tools_cpp", "previous": "cebe021", "trim": "", "trimbase": ""}
+{"base": "27e8eb4", "parent": "debian/galactic/test_osrf_testing_tools_cpp", "previous": "1dd509b", "trim": "", "trimbase": ""}
