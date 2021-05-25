@@ -1,3 +1,29 @@
+## osrf_testing_tools_cpp (galactic) - 1.4.0-2
+
+The packages in the `osrf_testing_tools_cpp` repository were released into the `galactic` distro by running `/usr/bin/bloom-release --track galactic --rosdistro galactic osrf_testing_tools_cpp` on `Tue, 25 May 2021 16:34:47 -0000`
+
+The `osrf_testing_tools_cpp` package was released.
+
+These packages were explicitly ignored:
+- `test_osrf_testing_tools_cpp`
+
+Version of package(s) in repository `osrf_testing_tools_cpp`:
+
+- upstream repository: https://github.com/osrf/osrf_testing_tools_cpp.git
+- release repository: https://github.com/ros2-gbp/osrf_testing_tools_cpp-release.git
+- rosdistro version: `1.3.2-3`
+- old version: `1.4.0-1`
+- new version: `1.4.0-2`
+
+Versions of tools used:
+
+- bloom version: `0.10.7`
+- catkin_pkg version: `0.4.23`
+- rosdep version: `0.20.1`
+- rosdistro version: `0.8.3`
+- vcstools version: `0.1.42`
+
+
 ## osrf_testing_tools_cpp (galactic) - 1.4.0-1
 
 The packages in the `osrf_testing_tools_cpp` repository were released into the `galactic` distro by running `/usr/bin/bloom-release --track galactic --rosdistro galactic osrf_testing_tools_cpp` on `Tue, 25 May 2021 16:30:05 -0000`
