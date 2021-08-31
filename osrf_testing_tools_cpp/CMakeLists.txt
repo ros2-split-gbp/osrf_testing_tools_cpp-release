@@ -10,9 +10,7 @@ if(NOT CMAKE_CXX_STANDARD)
 endif()
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic
-  -Wformat=2 -Wconversion -Woverloaded-virtual
-  -Wshadow -Wnon-virtual-dtor)
+  add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 endif()
 
 add_subdirectory(src)
@@ -21,7 +19,7 @@ include(CTest)
 if(BUILD_TESTING)
   include(cmake/osrf_testing_tools_cpp_require_googletest.cmake)
   # ensures target gtest_main exists
-  osrf_testing_tools_cpp_require_googletest(VERSION_GTE 1.10
+  osrf_testing_tools_cpp_require_googletest(VERSION_GTE 1.8
     VENDOR_DIR "${CMAKE_SOURCE_DIR}/vendor")
 
   add_subdirectory(test)
