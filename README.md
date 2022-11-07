@@ -1,3 +1,29 @@
+## osrf_testing_tools_cpp (humble) - 1.5.2-1
+
+The packages in the `osrf_testing_tools_cpp` repository were released into the `humble` distro by running `/usr/local/bin/bloom-release -r humble -y osrf_testing_tools_cpp` on `Mon, 07 Nov 2022 16:29:21 -0000`
+
+The `osrf_testing_tools_cpp` package was released.
+
+These packages were explicitly ignored:
+- `test_osrf_testing_tools_cpp`
+
+Version of package(s) in repository `osrf_testing_tools_cpp`:
+
+- upstream repository: https://github.com/osrf/osrf_testing_tools_cpp.git
+- release repository: https://github.com/ros2-gbp/osrf_testing_tools_cpp-release.git
+- rosdistro version: `1.5.1-2`
+- old version: `1.5.1-2`
+- new version: `1.5.2-1`
+
+Versions of tools used:
+
+- bloom version: `0.11.2`
+- catkin_pkg version: `0.5.2`
+- rosdep version: `0.22.1`
+- rosdistro version: `0.9.0`
+- vcstools version: `0.1.42`
+
+
 ## osrf_testing_tools_cpp (rolling) - 1.5.1-1
 
 The packages in the `osrf_testing_tools_cpp` repository were released into the `rolling` distro by running `/Users/william/.pyenv/versions/3.8.0/bin/bloom-release -r rolling -t rolling osrf_testing_tools_cpp` on `Mon, 14 Feb 2022 22:24:03 -0000`
